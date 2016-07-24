@@ -1,0 +1,14 @@
+RewriteEngine On    # Turn on the rewriting engine
+
+<IfModule mod_headers.c>    
+  Header add Access-Control-Allow-Origin "*" 
+</IfModule>
+
+RewriteRule    ^privacy/?$    default/source/workflow/privacy/privacy.php
+RewriteRule    ^terms/?$    default/source/workflow/terms/terms.php
+
+RewriteRule    ^events/?$    default/source/workflow/events/events.php
+RewriteRule    ^events/([^/]+)/([^/]+)/?$    default/source/workflow/events/events.php?category=$1&categoryId=$2
+RewriteRule    ^events/([^/]+)/([^/]+)/([^/]+)/?$    default/source/workflow/events/events.php?location=$1&category=$2&categoryId=$3
+
+RewriteRule    ^event-details/([^/]+)/([^/]+)/?$    default/source/workflow/events/event-details.php?eventName=$1&eventId=$2

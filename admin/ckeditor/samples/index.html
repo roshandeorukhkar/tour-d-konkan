@@ -1,0 +1,31 @@
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>CKEditor Sample</title>
+	<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+	<script src="../ckeditor.js"></script>
+	<script src="js/sample.js"></script>
+	<link rel="stylesheet" href="css/samples.css">
+	<link rel="stylesheet" href="toolbarconfigurator/lib/codemirror/neo.css">
+	<script src="//cdn.ckeditor.com/4.5.8/standard/ckeditor.js"></script>
+</head>
+<body id="main"><textarea id="editor1" name="editor1">&lt;p&gt;Initial value.&lt;/p&gt;</textarea>
+<input id="send" type="button" value="Send">
+<script>
+	window.onload = function()
+	{
+		CKEDITOR.replace( 'editor1' );
+	};
+	
+	$('#send').click(function() {
+	var editor_data = CKEDITOR.instances.editor1.getData();
+	alert(editor_data);
+    // send your ajax request with value
+    // profit!
+});
+	
+</script>
+
+</body>
+</html>
